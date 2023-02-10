@@ -12,3 +12,4 @@
 11. All permissions for all sub directories of the current directory for owner, group and other users
 12. Create a directory and set permissions 751
 13. Change the group owner to school for the file hello
+100. Change owner and group of all files and directories in working directory
