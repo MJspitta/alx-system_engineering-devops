@@ -9,3 +9,4 @@
 8. No permissions for owner and group, all permissions for other users
 9. All permissions for owner, read and execute for group and write and execute for other users
 10. Set mode of file hello same as olleh's mode
+11. All permissions for all sub directories of the current directory for owner, group and other users
