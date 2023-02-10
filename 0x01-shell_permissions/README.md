@@ -10,3 +10,5 @@
 9. All permissions for owner, read and execute for group and write and execute for other users
 10. Set mode of file hello same as olleh's mode
 11. All permissions for all sub directories of the current directory for owner, group and other users
+12. Create a directory and set permissions 751
+13. Change the group owner to school for the file hello
