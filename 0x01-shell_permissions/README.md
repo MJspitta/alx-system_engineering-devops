@@ -5,3 +5,4 @@
 4. Create an empty file called hello
 5. Add execute permission to the owner of the file hello
 6. Execute permission to owner and group owner and read permission to other users of the file hello
+7. Add execution permission to owner, group owner and other users
