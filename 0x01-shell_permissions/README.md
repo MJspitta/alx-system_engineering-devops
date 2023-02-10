@@ -4,3 +4,4 @@
 3. Change the owner of the file hello to the user betty
 4. Create an empty file called hello
 5. Add execute permission to the owner of the file hello
+6. Execute permission to owner and group owner and read permission to other users of the file hello
