@@ -8,3 +8,4 @@
 7. Add execution permission to owner, group owner and other users
 8. No permissions for owner and group, all permissions for other users
 9. All permissions for owner, read and execute for group and write and execute for other users
+10. Set mode of file hello same as olleh's mode
