@@ -7,3 +7,4 @@
 6. Display third line of a file
 7. Create file with an exact name
 8. Save current state of directory
+9. Duplicate last line
