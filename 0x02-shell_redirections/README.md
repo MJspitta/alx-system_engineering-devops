@@ -6,3 +6,4 @@
 5. Display the first ten lines of a file
 6. Display third line of a file
 7. Create file with an exact name
+8. Save current state of directory
