@@ -8,3 +8,4 @@
 7. Create file with an exact name
 8. Save current state of directory
 9. Duplicate last line
+10. Delete all js files
