@@ -9,3 +9,4 @@
 8. Save current state of directory
 9. Duplicate last line
 10. Delete all js files
+11. Count directories and sub directories
