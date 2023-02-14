@@ -13,3 +13,4 @@
 12. Display ten newest files in the current directory
 13. Output a unique list 
 14. Display lines containing the pattern "root"
+15. Display number of lines that contain the pattern "bin"
