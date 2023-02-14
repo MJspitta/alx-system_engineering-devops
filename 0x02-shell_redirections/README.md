@@ -17,3 +17,4 @@
 16. Display lines containing the pattern "root" and 3 lines after them
 17. Display lines that don't contain pattern "bin"
 18. Display lines starting with a letter
+19. Replace characters from input
