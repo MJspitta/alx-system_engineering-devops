@@ -11,3 +11,4 @@
 10. Delete all js files
 11. Count directories and sub directories
 12. Display ten newest files in the current directory
+13. Output a unique list 
