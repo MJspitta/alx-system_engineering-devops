@@ -14,3 +14,4 @@
 13. Output a unique list 
 14. Display lines containing the pattern "root"
 15. Display number of lines that contain the pattern "bin"
+16. Display lines containing the pattern "root" and 3 lines after them
