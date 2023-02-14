@@ -22,3 +22,4 @@
 21. Reverse the input
 22. Display all users and their home directories, sorted by users
 100. Find all empty files and directories in current directory
+101. List all files with a .gif extension
