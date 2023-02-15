@@ -6,3 +6,4 @@
 5. List all local variables and environment variables and functions
 6. Create a new local variable
 7. Create a new global variable
+8. Print result of adding a number to an environment variable
