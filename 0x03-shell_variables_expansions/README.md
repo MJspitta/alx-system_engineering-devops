@@ -4,3 +4,4 @@
 3. Count number of directories in the PATH
 4. List environment variables
 5. List all local variables and environment variables and functions
+6. Create a new local variable
