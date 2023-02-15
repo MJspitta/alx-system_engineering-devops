@@ -8,3 +8,4 @@
 7. Create a new global variable
 8. Print result of adding a number to an environment variable
 9. Print result of environment variables POWER divided by DIVIDE
+10. Print result of BREATH to the power LOVE
