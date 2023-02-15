@@ -10,3 +10,4 @@
 9. Print result of environment variables POWER divided by DIVIDE
 10. Print result of BREATH to the power LOVE
 11. Convert a number from base 2 to base 10
+12. Print all possible combinations of 2 letters except oo
