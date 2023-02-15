@@ -11,3 +11,4 @@
 10. Print result of BREATH to the power LOVE
 11. Convert a number from base 2 to base 10
 12. Print all possible combinations of 2 letters except oo
+13. Print number with 2 decimal places
