@@ -14,4 +14,5 @@
 13. Print number with 2 decimal places
 100. Convert a number from base 10 to base 16
 101. Encode and decode text using the rot13 encryption
-102. print every other line from the input starting with the first line
+102. Print every other line from the input starting with the first line
+103. Add two numbers stored in environment variables and print result
