@@ -5,3 +5,4 @@
 4. List environment variables
 5. List all local variables and environment variables and functions
 6. Create a new local variable
+7. Create a new global variable
