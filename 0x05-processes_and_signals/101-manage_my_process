@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# to start, stop, restart a process
+
+function startLoop_createFile {
+	./manage_my_process &
+	echo "$!" > /var/run/my_process.pid
+}
+
+function killLoop_rmFile {
+	sudo pkill -f "./manage_my_process"
+	rm /var/run/my_process.pid
+}
+
+case "$1" in
+	start) echo "manage_my_process started"
+		startLoop_createFile
+		;;
+	stop) echo "manage_my_process stopped"
+		killLoop_rmFile
+		;;
+	restart) echo "manage_my_process restarted"
+		killLoop_rmFile
+		startLoop_createFile
+		;;
+	*) echo "Usage: manage_my_process {start|stop|restart}"
+		;;
+esac
