@@ -2,6 +2,6 @@
 # key ~/.ssh/school
 # It must also be configured to refuse to authenticate using a password
 
-HOST 18.204.6.131
-	PasswordAuthentication no
+Host 54.90.11.108
 	IdentityFile ~/.ssh/school
+	PasswordAuthentication no
