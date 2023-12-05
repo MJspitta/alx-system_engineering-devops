@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#Write 0-custom_http_response_header so that it
+#configures a brand new Ubuntu machine to the
+#requirements asked in this task
+
+sudo apt-get update
+sudo apt-get install -y nginx
+echo "Hello World!" | sudo tee /var/www/html/index.html
+replacement_string="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/MJspitta permanent;"
+sudo sed -i "s/server_name _;/$replacement_string/" /etc/nginx/sites-enabled/default
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+sudo sed -i "server_name _;/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-enabled/default
+sudo nginx -t
+sudo service nginx restart
