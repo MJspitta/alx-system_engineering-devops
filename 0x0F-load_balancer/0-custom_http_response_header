@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#Write 0-custom_http_response_header so that it
+#Write 0-custom_http_response_header so it
 #configures a brand new Ubuntu machine to the
 #requirements asked in this task
 
