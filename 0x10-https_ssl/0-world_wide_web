@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# Configure your domain zone so that the subdomain www
+# points to your load-balancer IP (lb-01)
+
+get_info () {
+	# perform DNS lookup
+	if [ "$#" -lt 1 ]
+	then
+		exit 0
+	elif [ "$#" -eq 2 ]
+	then
+		name=$(dig $2.$1 | grep -A1 'ANSWER SECTION:' | awk -F. 'NR==2 {print $1}')
+		record=$(dig $2.$1 | grep -A1 'ANSWER SECTION:' | awk 'NR==2 {print $4}')
+		ip=$(dig $2.$1 | grep -A1 'ANSWER SECTION:' | awk 'NR==2 {print $5}')
+		echo "The subdomain $name is a $record record and points to $ip"
+	else
+		declare -a sub=("www" "lb-01" "web-01" "web-02")
+		for s in "${sub[@]}"
+		do
+			name=$(dig $s.$1 | grep -A1 'ANSWER SECTION:' | awk -F. 'NR==2 {print $1}')
+                	record=$(dig $s.$1 | grep -A1 'ANSWER SECTION:' | awk 'NR==2 {print $4}')
+                	ip=$(dig $s.$1 | grep -A1 'ANSWER SECTION:' | awk 'NR==2 {print $5}')
+                	echo "The subdomain $name is a $record record and points to $ip"
+		done
+	fi
+}
+
+get_info $1 $2
