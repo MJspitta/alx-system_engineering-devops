@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 #Using what you did for task 0, make your fix short and sweet
 ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-service nginx restart
 netstat -tuln | grep ':80'
+service nginx start
