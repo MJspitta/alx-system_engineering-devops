@@ -5,3 +5,5 @@
 1. Let us in!
 
 2. If only you could see what I've seen with your eyes
+
+3. Quite an experience to live in fear, isn't it?
