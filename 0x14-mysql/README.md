@@ -9,3 +9,5 @@
 3. Quite an experience to live in fear, isn't it?
 
 4. Setup a Primary-Replica infrastructure using MySQL
+
+5. MySQL backup
