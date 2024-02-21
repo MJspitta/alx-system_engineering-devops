@@ -35,7 +35,7 @@ def fetch_todo():
                                                           TOTAL_NUM_OF_TASKS))
 
     for tt in TASK_TITLE:
-        print("\t {}".format(tt))
+        print("\t{}".format(tt))
 
 
 if __name__ == "__main__":
