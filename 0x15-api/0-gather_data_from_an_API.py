@@ -4,38 +4,29 @@ Using a REST API, for a given employee ID,
 returns information about his/her TODO list progress
 """
 import requests
-import sys
+from sys import argv
 
 
 def fetch_todo():
     """ get data from api and display todo list progress """
-    url = "http://jsonplaceholder.typicode.com/users"
-    to_do = "http://jsonplaceholder.typicode.com/todos"
-    users = requests.get(url)
+    url = "http://jsonplaceholder.typicode.com/"
+    user_id = argv[1]
+    user_resp = requests.get(url + "users/{}".format(user_id))
+    user = user_resp.json()
 
-    for user in users.json():
-        if user.get('id') == int(sys.argv[1]):
-            EMPLOYEE_NAME = (user.get('name'))
-            break
+    params = {"userId": user_id}
+    todos_resp = requests.get(url + "todos", params=params)
+    todos = todos_resp.json()
+    complete_list = []
 
-    TOTAL_NUM_OF_TASKS = 0
-    NUMBER_OF_DONE_TASKS = 0
-    TASK_TITLE = []
-    todos = requests.get(to_do)
-
-    for td in todos.json():
-        if td.get('userId') == int(sys.argv[1]):
-            TOTAL_NUM_OF_TASKS += 1
-            if td.get('completed') is True:
-                NUMBER_OF_DONE_TASKS += 1
-                TASK_TITLE.append(td.get('title'))
-
-    print("Employee {} is done with tasks({}/{}):".format(EMPLOYEE_NAME,
-                                                          NUMBER_OF_DONE_TASKS,
-                                                          TOTAL_NUM_OF_TASKS))
-
-    for tt in TASK_TITLE:
-        print("\t{}".format(tt))
+    for td in todos:
+        if td.get("completed") is True:
+            complete_list.append(td.get("title"))
+    print ("Employee {} is done with tasks({}/{})".format(user.get("name"),
+                                                          len(complete_list),
+                                                          len(todos)))
+    for c in complete_list:
+        print("\t{}".format(c))
 
 
 if __name__ == "__main__":
