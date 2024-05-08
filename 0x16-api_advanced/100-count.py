@@ -16,9 +16,9 @@ def count_words(subreddit, word_list, after=None, counts={}):
         params['after'] = after
 
     response = requests.get(url,
-                           headers=headers,
-                           params=params,
-                           allow_redirects=False)
+                            headers=headers,
+                            params=params,
+                            allow_redirects=False)
     if response.status_code != 200:
         return
 
