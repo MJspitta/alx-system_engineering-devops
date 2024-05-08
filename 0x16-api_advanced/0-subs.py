@@ -12,8 +12,11 @@ def number_of_subscribers(subreddit):
                               AppleWebKit/537.36 (KHTML, like Gecko) \
                               Chrome/58.0.3029.110 Safari/537.3'}
 
-    response = requests.get(url, headers=headers, allow_redirects=False)
-    if response.status_code == 404:
+    try:
+        response = requests.get(url, headers=headers, allow_redirects=False)
+        response.raise_for_status()
+        results = response.json().get('data')
+        return results.get('subscribers', 0)
+    except requests.exceptions.RequestException as e:
+        print("Error accessing Reddit API: {}".format(e))
         return 0
-    results = response.json().get('data')
-    return results.get('subscribers')

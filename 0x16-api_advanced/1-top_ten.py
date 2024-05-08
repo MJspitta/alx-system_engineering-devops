@@ -6,13 +6,15 @@ import requests
 
 
 def top_ten(subreddit):
-    url = "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
-    headers = requests.utils.default_headers()
-    headers.update({'User-Agent': 'My User Agent 1.0'})
-
-    response = requests.get(url, headers=headers).json()
-    topten = response.get('data', {}).get('children', [])
-    if not topten:
+    url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) \
+                              AppleWebKit/537.36 (KHTML, like Gecko) \
+                              Chrome/58.0.3029.110 Safari/537.3'}
+    params = {'limit': 10}
+    response = requests.get(url, headers=headers, params=params,
+                             allow_redirects=False)
+    if response.status_code == 404:
         print(None)
-    for i in topten:
-        print(i.get('data').get('title'))
+        return
+    results = response.json().get('data')
+    [print(c.get('data').get('title')) for c in results.get('children')]
