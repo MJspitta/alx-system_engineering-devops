@@ -6,23 +6,25 @@ for a given subreddit
 import requests
 
 
-def recurse(subreddit, hot_list=[], after="tmp"):
+def recurse(subreddit, hot_list=[], after="", count=0):
     """return all hot articles or NOne if invalid"""
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
-    headers = requests.utils.default_headers()
-    headers.update({'User-Agent': 'My User Agent 1.0'})
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) \
+                              AppleWebKit/537.36 (KHTML, like Gecko) \
+                              Chrome/58.0.3029.110 Safari/537.3'}
+    params = {'after': after, 'count': count, 'limit': 100}
 
-    if after != "tmp":
-        url = url + "?after={}".format(after)
-    response = requests.get(url, headers=headers, allow_redirects=False)
+    response = requests.get(url, headers=headers, params=params,
+                            allow_redirects=False)
+    if response.status_code == 404:
+        return None
 
-    results = response.json().get('data', {}).get('children', [])
-    if not results:
-        return hot_list
-    for i in results:
+    results = response.json().get('data')
+    after = results.get('after')
+    count += results.get('dist')
+    for i in results.get('children'):
         hot_list.append(i.get('data').get('title'))
 
-    after = response.json().get('data').get('after')
-    if not after:
-        return hot_list
-    return (recurse(subreddit, hot_list, after))
+    if after is not None:
+        return recurse(subreddit, hot_list, after, count)
+    return hot_list
