@@ -1,6 +1,6 @@
-# script to fix typo in config
+# script to fix phpp typo in config
 
-exec { 'fix config type':
-  command => "sed -i 's/.phpp/.php' /var/www/html/wp-settings.php",
-  path    => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
+exec { 'fix-config':
+  command => 'sed -i s/phpp/php/g /var/www/html/wp-settings.php',
+  path    => '/usr/local/bin/:/bin/'
 }
